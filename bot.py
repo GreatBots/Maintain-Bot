@@ -33,7 +33,7 @@ BOT_BUTTONS = InlineKeyboardMarkup(
     [
         [
             InlineKeyboardButton("Channel", url="https://telegram.me/botsxworld"),
-            InlineKeyboardButton("Dev", url="https://telegram.me/uncoy"),
+            InlineKeyboardButton("Dev", url="https://telegram.me/uncoy")
         ]
     ]
 )

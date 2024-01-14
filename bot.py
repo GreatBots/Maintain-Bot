@@ -1,7 +1,7 @@
 """
 Maintain, Telegram Maintain Bot
 
-Copyright (C) 2021 Vivek-TP <https://t.me/Vivek_Kerala>
+Copyright (C) 2021 Vivek-TP <https://t.me/unocy>
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
@@ -32,8 +32,8 @@ You Can't Use This Bot Right Now.You Will Get a Message On This Bot's Channel If
 BOT_BUTTONS = InlineKeyboardMarkup(
     [
         [
-            InlineKeyboardButton(text="Channel", url=f"https://telegram.me/{updatesc}"),
-            InlineKeyboardButton(text="Support", url=f"https://telegram.me/{supportc}"),
+            InlineKeyboardButton(text="Channel", url=f"https://telegram.me/botsxworld"),
+            InlineKeyboardButton(text="Dev", url=f"https://telegram.me/uncoy"),
         ]
     ]
 )

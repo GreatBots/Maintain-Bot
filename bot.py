@@ -30,7 +30,7 @@ You Can't Use This Bot Right Now.You Will Get a Message On This Bot's Channel If
 """
 
 BOT_BUTTONS = InlineKeyboardMarkup(
-    [
+    inline_keyboard=[
         [
             InlineKeyboardButton("Channel", url="https://telegram.me/botsxworld"),
             InlineKeyboardButton("Dev", url="https://telegram.me/uncoy")

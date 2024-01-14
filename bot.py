@@ -38,7 +38,6 @@ BOT_BUTTONS = InlineKeyboardMarkup(
     ]
 )
 
-
 @Bot.on_message(filters.text)
 def handler(client, message):
     reply = BOT_TEXT

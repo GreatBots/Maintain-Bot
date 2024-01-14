@@ -12,42 +12,26 @@ import logging
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
-Bot = Client(
+bot = Client(
     "Maintain-Bot",
     bot_token=os.environ["BOT_TOKEN"],
     api_id=int(os.environ["API_ID"]),
     api_hash=os.environ["API_HASH"],
 )
 
-updatesc = os.environ["UPDATES_CHANNEL"]
-supportc = os.environ["SUPPORT_CHAT"]
-btname = os.environ["BOT_NAME"]
+@bot.on_message(filters.command(["start", "help"]) | filters.text)
+async def start_handler(client, message):
+    user_mention = message.from_user.mention if message.from_user else ""
+    response_message = f"Hai {user_mention}, This Bot Is Under Maintenance.\n\nYou Can't Use This Bot Right Now. " \
+                       "You Will Get a Message On This Bot's Channel If This Bot Is Ready To Work."
 
-BOT_TEXT = """
-Hai {} , This Bot Is Under Maintenance.
+    # Create InlineKeyboardMarkup with the specified buttons
+    keyboard = InlineKeyboardMarkup([
+        [InlineKeyboardButton("Channel", url="https://t.me/botsxworld")],
+        [InlineKeyboardButton("Dev", url="https://unocy.t.me")]
+    ])
 
-You Can't Use This Bot Right Now.You Will Get a Message On This Bot's Channel If This Bot Is Ready To Work.
-"""
+    await message.reply_text(response_message, reply_markup=keyboard)
 
-BOT_BUTTONS = InlineKeyboardMarkup(
-    inline_keyboard=[
-        [
-            InlineKeyboardButton("Channel", url="https://telegram.me/botsxworld"),
-            InlineKeyboardButton("Dev", url="https://telegram.me/uncoy")
-        ]
-    ]
-)
-
-@Bot.on_message(filters.text)
-def handler(client, message):
-    reply = BOT_TEXT
-    markup = InlineKeyboardMarkup([[BOT_BUTTONS]])
-    message.reply_text(reply, reply_markup=markup)
-
-print(
-    """
-Bot Contributed To {btname} And Started Started!!!
-"""
-)
-
-Bot.run()
+# Start the bot
+bot.run()
